@@ -1,4 +1,9 @@
-FROM arm32v7/debian:latest
+#FROM arm32v7/debian:latest
+#FROM balenalib/raspberry-pi-debian-python
+
+#FROM balenalib/arm32-debian
+
+FROM python:3.7-slim
 
 ENV LD_LIBRARY_PATH=/opt/vc/lib
 
@@ -36,7 +41,8 @@ WORKDIR /app
 
 #RUN unlink /usr/bin/python
 #RUN ln -sv /usr/bin/python3.7 /usr/bin/python
-RUN apt-get -y install python3-pip
+#RUN apt-get -y install python3-pip
+
 RUN pip3 install picamera
 
 EXPOSE 8081
